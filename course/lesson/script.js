@@ -30,7 +30,7 @@
 
 // 
 
-// let user = {};
+// let user = {};          // ПРИМЕР ИСПОЛЬЗОВАНИЯ promt
 // user.name = prompt("What is your name?");
 // user.surname = prompt("What is your surname?");
 // user.age = prompt("How old are you?", "18");
@@ -86,7 +86,7 @@
 //     this.displayInfo = function(){
 //         console.log("Имя: " + this.name + " возраст" + _age);
 //     };
-    
+
 //     this.getAge = function(){
 //         return _age;
 //     }
@@ -105,35 +105,102 @@
 // user.setAge(19);
 // console.log(user.getAge());
 
-function User(name, age){
-    this.name = name;
-    this.age = age;
+// 
 
-    this.go = function(){
-        console.log(this.name + " идет" + "<br/>");
-    };
+// function User(name, age){ //ПРИМЕР СОЗДАНИЕ КОНСТРУКТОРА + НАСЛЕДОВАНИЕ
+//     this.name = name;
+//     this.age = age;
 
-    this.displayInfo = function(){
-        console.log("Имя: " + this.name + " возраст " + this.age);
-    };
+//     this.go = function(){
+//         console.log(this.name + " идет" + "<br/>");
+//     };
+
+//     this.displayInfo = function(){
+//         console.log("Имя: " + this.name + " возраст " + this.age);
+//     };
+// }
+
+// User.prototype.maxAge = 100;
+
+// function Employee(name, age, company){
+//     User.call(this, name, age);
+//     this.company = company;
+//     this.displayInfo = function(){
+//         console.log("Имя: " + this.name + " возраст " + this.age + " компания " + this.company + "<br/>");
+//     };
+
+//     Employee.prototype = Object.create(User.prototype);
+
+//     let tom = new User("Tom", 21);
+//     let bill = new Employee("Bill", 30, "Google");
+//     tom.go();
+//     bill.go();
+//     tom.displayInfo();
+//     bill.displayInfo();
+//     console.log(bill.maxAge);
+// }
+
+//
+
+
+// let user = {        //ПРИМЕР ДЕКОМПОЗИЦИИ
+//     name: "Artem",
+//     age: 19,
+//     phone: "+380961241337",
+//     email: "artem.zhiruk@hotmail.com"
+
+// };
+
+// let {name: userName, phone: userPhone} = user; // ДЕКОМПОЗИЦИЯ В ДРУГИЕ ПЕРЕМЕННЫЕБ НО МОЖНА И В ТЕ ЖЕ
+// console.log(userName);
+// console.log(userPhone);
+
+//
+
+// let currentDate = new Date();     //РАБОТА С ДАТАМИ
+// console.log(currentDate);
+
+// var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+// var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+//     "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+// ];
+
+// let myDate = new Date();
+// let fullDate = "Today: " + myDate.getDate() + " " + months[myDate.getMonth()] +
+//  " " + myDate.getFullYear() + ", " + days[myDate.getDay()];
+
+//  document.write(fullDate);
+
+
+var fruit = new Array();
+fruit[0] = "яблоки";
+fruit[1] = "груши";
+fruit[2] = "сливы";
+
+console.log("В массиве fruit " + fruit.length + " элемента: " + "<br/>");
+for (var i = 0; i < fruit.length; i++) {
+    console.log(fruit[i]);
 }
 
-User.prototype.maxAge = 100;
 
-function Employee(name, age, company){
-    User.call(this, name, age);
-    this.company = company;
-    this.displayInfo = function(){
-        console.log("Имя: " + this.name + " возраст " + this.age + " компания " + this.company + "<br/>");
-    };
 
-    Employee.prototype = Object.create(User.prototype);
 
-    let tom = new User("Tom", 21);
-    let bill = new Employee("Bill", 30, "Google");
-    tom.go();
-    bill.go();
-    tom.displayInfo();
-    bill.displayInfo();
-    console.log(bill.maxAge);
+
+var fruit = ["яблоки", "груши", "сливы"];
+var vegetables = ["помидоры", "огурцы", "картофель"];
+var products = fruit.concat(vegetables);
+
+for (var i = 0; i < products.length; i++) {
+    console.log(products[i]);
 }
+
+
+var fruit = ["яблоки", "груши", "сливы", "абрикосы", "персики"];
+var fruitString = fruit.join(", ");
+console.log(fruitString);
+
+var fruit = ["яблоки", "груши", "сливы", "абрикосы", "персики"];
+fruit.sort();
+
+for (var i = 0; i < fruit.length; i++)
+    console.log(fruit[i]);
